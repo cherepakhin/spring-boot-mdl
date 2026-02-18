@@ -38,7 +38,7 @@ Or:
 
 Open [http://localhost:8080] in your browser.
 
-# Login Credentials
+## Login Credentials
     username: user
     password: user
     or
@@ -52,3 +52,23 @@ Open [http://localhost:8080] in your browser.
 
 ![doc/screen_left_panel.png](doc/screen_left_panel.png)
 
+## Build
+
+````shell
+./gradlew build
+````
+
+name of build setting in build.gradle:
+
+````shell
+jar {
+	baseName = 'mdl'
+	version = '0.0.1-SNAPSHOT'
+}
+````
+
+Run built jar:
+
+````shell
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -jar build/libs/mdl-0.0.1-SNAPSHOT.jar
+````
