@@ -2,7 +2,7 @@
 form.login {
 	border: 1px solid lightgrey;
 	border-radius: 5px;
-	background-color: steelblue;
+	background-color: #3f84b5;
 	color: white;
 	width: 400px;
 	height: 200px;
@@ -97,6 +97,23 @@ select {
 	border: 1px solid steelblue;
 	padding: 5px;	
 	font-size: 15pt;
+}
+/*  my style */
+.mdl-layout__header {
+	background-color: #3f7fb5;
+}
+
+.mdl-color--indigo{
+	background-color:#3f7fb5 !important
+}
+
+.mdl-mini-footer {
+	padding: 16px 16px;
+}
+
+a {
+	color: #ff4040;
+	font-weight: 500;
 }
 
 
