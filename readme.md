@@ -1,5 +1,7 @@
 # Spring Boot MVC with Thymeleaf and Material Design Lite
 
+Source author [https://github.com/JFelipeP/spring-boot-mdl.git](https://github.com/JFelipeP/spring-boot-mdl.git).
+
 This is an example of Spring Boot MVC with Thymeleaf as its view technology styled with Material Design Lite, an implementation of the Material Design concept created by Google.
 
 Used:
