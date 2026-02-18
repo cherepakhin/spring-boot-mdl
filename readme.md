@@ -48,5 +48,7 @@ Open [http://localhost:8080] in your browser.
 
 ![doc/screen1.png](doc/screen1.png)
 
+![doc/screen2.png](doc/screen2.png)
+
 ![doc/screen_left_panel.png](doc/screen_left_panel.png)
 
