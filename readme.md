@@ -74,3 +74,10 @@ Run built jar:
 ````shell
 /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -jar build/libs/mdl-0.0.1-SNAPSHOT.jar
 ````
+
+## Links
+
+[Understanding Spring MVC](https://www.codejava.net/frameworks/spring/understanding-spring-mvc)
+[How to create a Spring Boot Web Application (Spring MVC with JSP/ThymeLeaf)](https://www.codejava.net/frameworks/spring-boot/how-to-create-a-spring-boot-web-application-spring-mvc-with-jsp-thymeleaf)
+[Introduction to Using Thymeleaf in Spring (baeldung)](https://www.baeldung.com/thymeleaf-in-spring-mvc)
+[Практика: интеграция Thymeleaf для генерации HTML-страниц (javarush)](https://javarush.com/quests/lectures/ru.javarush.java.spring.lecture.level07.lecture08)
