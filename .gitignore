@@ -15,4 +15,6 @@ gradlew.bat
 
 src/main/resources/static/bower_components
 
+.idea/
+.gigaide/
 
