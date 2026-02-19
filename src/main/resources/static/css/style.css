@@ -69,7 +69,7 @@ form input[value="Logout"] {
 /*  end login style  */
 
 /* start logout button style */
-
+/* '#' for id */
 form button#logout {
 	border: none;
 	color: white;
