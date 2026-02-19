@@ -53,9 +53,4 @@ public class AdminFormData {
 		return "AdminFormData [username=" + username + ", password=" + password + ", authority=" + authority
 				+ ", enabled=" + enabled + "]";
 	}
-	
-	
-	
-		
-
 }
