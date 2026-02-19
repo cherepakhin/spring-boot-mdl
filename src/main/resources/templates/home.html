@@ -14,7 +14,9 @@
 
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
 
+		<!-- load footer from layout.html, see th:fragment="header" ==> "layout :: header" -->
 		<div th:replace="layout :: header"></div>
+		<!-- load footer from layout.html, see th:fragment="drawer" ==> "layout :: drawer" -->
 		<div th:replace="layout :: drawer"></div>
 
 		<main class="mdl-layout__content">
@@ -26,7 +28,7 @@
 				<div class="mdl-cell mdl-cell--12-col">
 				
 					<!-- content -->
-					
+					<!-- Section empty for example -->
 					<!-- content -->
 									
 				</div> <!-- cell -->				
@@ -36,6 +38,7 @@
 		</div>
 		</main>
 
+		<!-- load footer from layout.html, see th:fragment="footer" ==> "layout :: footer" -->
 		<div th:replace="layout :: footer"></div>
 		
 	</div>
