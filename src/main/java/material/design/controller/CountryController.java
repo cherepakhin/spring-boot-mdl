@@ -26,7 +26,7 @@ public class CountryController {
 	private CountryRepository repository;
 	
 	
-	@GetMapping
+	@GetMapping("")
 	public String show(Model model) {			
 		model.addAttribute("country", new Country());
 		List<Country> countries = repository.findAll();
@@ -37,7 +37,7 @@ public class CountryController {
 
 		return "countries";
 	}
-	
+
 	@PostMapping("/save")
 	public String save(Country country, RedirectAttributes model) {
 		Country newCountry = repository.saveAndFlush(country);
@@ -63,9 +63,4 @@ public class CountryController {
 		model.addAttribute("edit", true);
 		return "countries";
 	}
-	
-	
-	
-	
-
 }
