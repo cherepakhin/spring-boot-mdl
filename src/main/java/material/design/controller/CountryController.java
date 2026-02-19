@@ -2,6 +2,8 @@ package material.design.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +19,9 @@ import material.design.repository.CountryRepository;
 @Controller
 @RequestMapping("/country")
 public class CountryController {
-	
+
+	private static final Logger logger = LoggerFactory.getLogger(CountryController.class);
+
 	@Autowired
 	private CountryRepository repository;
 	
@@ -29,6 +33,8 @@ public class CountryController {
 		model.addAttribute("countries", countries);
 		model.addAttribute("edit", false);
 		model.addAttribute("message", "Countries List");
+		logger.info("Show Country page with countries: {}", countries);
+
 		return "countries";
 	}
 	
