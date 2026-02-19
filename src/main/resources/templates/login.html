@@ -27,6 +27,7 @@
         <div th:if="${param.logout}" class="logout-successful">
             You have been logged out.
         </div>
+        <!-- for param=denied. Example:http://127.0.0.1:8080/login?denied -->
         <div th:if="${param.denied}" class="login-error">
             You must have a Admin role.
         </div>
