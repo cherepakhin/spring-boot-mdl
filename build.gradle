@@ -35,10 +35,11 @@ dependencies {
 	//compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")  
+	compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
+	compile("ch.qos.logback:logback-classic:1.2.3")
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile("ch.qos.logback:logback-classic:1.2.3")
+	testCompile('org.springframework.security:spring-security-test')
 }
 
 
