@@ -1,5 +1,8 @@
 package material.design.controller;
 
+import material.design.model.UsersAndAuthorities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,8 @@ import material.design.model.Users;
 import material.design.repository.AuthoritiesRepository;
 import material.design.repository.UsersRepository;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -24,11 +29,15 @@ public class AdminController {
 	private UsersRepository usersRepository;
 	
 	@Autowired
-	private AuthoritiesRepository authoritiesRepository;	
-	
+	private AuthoritiesRepository authoritiesRepository;
+
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
+
 	@GetMapping
-	public String showUsers(Model model) {		
-		model.addAttribute("users", usersRepository.JdbcFindUsersWithAuthorities());		
+	public String showUsers(Model model) {
+		List<UsersAndAuthorities> users = usersRepository.JdbcFindUsersWithAuthorities();
+		logger.info("Users: " + users);
+		model.addAttribute("users", users);
 		model.addAttribute("adminFormData", new AdminFormData(null, null, "ROLE_USER", true));
 		return "users";
 	}
