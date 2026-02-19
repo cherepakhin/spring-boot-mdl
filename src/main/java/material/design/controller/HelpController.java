@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelpController {
 	private static final Logger logger = LoggerFactory.getLogger(HelpController.class);
 
-	@GetMapping("/help")
+	@GetMapping("help")
 	public String help(Model model) {
 		logger.info("Go to help");
 		return "help";
