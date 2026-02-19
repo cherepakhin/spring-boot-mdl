@@ -38,6 +38,7 @@ dependencies {
 	compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")  
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile("ch.qos.logback:logback-classic:1.2.3")
 }
 
 
