@@ -83,6 +83,21 @@ Run ONE test from console:
 ./gradlew test --tests "material.design.controller.CountryControllerMvcTest"
 ````
 
+Test with __MOCK USER__ CountryControllerMvcTest.java [CountryControllerMvcTest.java](src/test/java/material/design/controller/CountryControllerMvcTest.java):
+
+````java
+    @WithMockUser(value = "user") // <---------------------MOCK USER
+    @Test
+    public void getCountryOk() throws Exception {
+        List<Country> countries = new ArrayList<>();
+        Country country = new Country();
+        country.setId(1L);
+        countries.add(country);
+        when(repository.findAll()).thenReturn(countries);
+        this.mockMvc.perform(get("/country")).andDo(print()).andExpect(status().isOk());
+    }
+````
+
 ## Links
 
 [Understanding Spring MVC](https://www.codejava.net/frameworks/spring/understanding-spring-mvc)
