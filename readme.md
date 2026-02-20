@@ -83,7 +83,7 @@ Run ONE test from console:
 ./gradlew test --tests "material.design.controller.CountryControllerMvcTest"
 ````
 
-Test with __MOCK USER__ CountryControllerMvcTest.java [CountryControllerMvcTest.java](src/test/java/material/design/controller/CountryControllerMvcTest.java):
+Test with __MOCK USER__ [CountryControllerMvcTest.java](src/test/java/material/design/controller/CountryControllerMvcTest.java):
 
 ````java
     @WithMockUser(value = "user") // <---------------------MOCK USER
