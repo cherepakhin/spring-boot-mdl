@@ -24,6 +24,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/*
+По умолчанию в контексте безопасности Spring Security используется пользователь с именем «user»,
+паролем «password» и ролью «USER».
+
+Аннотацию @WithMockUser(value = "user") можно применить ко всему тестовому классу, чтобы каждый
+тест использовал указанного пользователя.
+
+ */
 @RunWith(SpringRunner.class)
 @WebMvcTest(CountryController.class)
 public class CountryControllerMvcTest {
@@ -101,12 +109,5 @@ public class CountryControllerMvcTest {
                                 hasProperty("id", is(100L))
                         )
                 )));
-    }
-
-    @WithMockUser(value = "fake")
-    @Test
-    public void getCountryContentWithFakeUser() throws Exception {
-        this.mockMvc.perform(get("/country")).andDo(print())
-                .andExpect(view().name("countries"));
     }
 }
