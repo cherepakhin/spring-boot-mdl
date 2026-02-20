@@ -16,13 +16,13 @@ import org.springframework.test.web.servlet.ResultActions;
 import java.util.ArrayList;
 import java.util.List;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.fail;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(CountryController.class)
@@ -78,6 +78,29 @@ public class CountryControllerMvcTest {
                 fail();
             }
         }
+    }
+
+    @Test
+    @WithMockUser(value = "user")
+    public void getCountryContentWithUserFromGigaCode() throws Exception {
+        List<Country> countries = new ArrayList<>();
+        Country country = new Country();
+        country.setId(100L);
+        countries.add(country);
+
+        when(repository.findAll()).thenReturn(countries);
+
+        this.mockMvc.perform(get("/country"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("countries"))
+                .andExpect(model().attributeExists("countries"))
+                .andExpect(model().attribute("countries", hasSize(1)))
+                .andExpect(model().attribute("countries", hasItem(
+                        allOf(
+                                hasProperty("id", is(100L))
+                        )
+                )));
     }
 
     @WithMockUser(value = "fake")
