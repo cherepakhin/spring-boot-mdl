@@ -22,9 +22,16 @@ public class CountryController {
 
 	private static final Logger logger = LoggerFactory.getLogger(CountryController.class);
 
-	@Autowired
 	private CountryRepository repository;
-	
+
+	public CountryController(@Autowired CountryRepository repository) {
+		if (repository == null) {
+			throw new IllegalArgumentException("CountryRepository must not be null");
+		}
+		if (repository != null) {
+			this.repository = repository;
+		}
+	}
 	
 	@GetMapping("")
 	public String show(Model model) {			
