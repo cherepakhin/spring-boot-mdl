@@ -75,6 +75,14 @@ Run built jar:
 /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -jar build/libs/mdl-0.0.1-SNAPSHOT.jar
 ````
 
+## Other
+
+Run ONE test from console:
+
+````shell
+./gradlew test --tests "material.design.controller.CountryControllerMvcTest"
+````
+
 ## Links
 
 [Understanding Spring MVC](https://www.codejava.net/frameworks/spring/understanding-spring-mvc)
