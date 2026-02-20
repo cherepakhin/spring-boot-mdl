@@ -86,16 +86,16 @@ Run ONE test from console:
 Test with __MOCK USER__ [CountryControllerMvcTest.java](src/test/java/material/design/controller/CountryControllerMvcTest.java):
 
 ````java
-    @WithMockUser(value = "user") // <---------------------MOCK USER
-    @Test
-    public void getCountryOk() throws Exception {
-        List<Country> countries = new ArrayList<>();
-        Country country = new Country();
-        country.setId(1L);
-        countries.add(country);
-        when(repository.findAll()).thenReturn(countries);
-        this.mockMvc.perform(get("/country")).andDo(print()).andExpect(status().isOk());
-    }
+@WithMockUser(value = "user") // <---------------------MOCK USER
+@Test
+public void getCountryOk() throws Exception {
+    List<Country> countries = new ArrayList<>();
+    Country country = new Country();
+    country.setId(1L);
+    countries.add(country);
+    when(repository.findAll()).thenReturn(countries);
+    this.mockMvc.perform(get("/country")).andDo(print()).andExpect(status().isOk());
+}
 ````
 
 ## Links
